@@ -3,6 +3,7 @@
 import uiautomator2 as u2
 from logzero import logger
 import time
+import os
 
 
 # 参考网站：
@@ -80,18 +81,18 @@ class Maxim(object):
         :param widget_black: 黑控件 黑区域屏蔽 max.widget.black文件需要配置正确
         :return:
         '''
+        print(monkey_shell)
         cls.clear_env()
         cls.push_jar()
-        if monkey_shell.find('awl.strings'):
+        if monkey_shell.find('awl.strings') != -1:
             cls.push_white_list()
-        if monkey_shell.find('uiautomatortroy'):
+        if monkey_shell.find('uiautomatortroy') != -1:
             cls.push_selector()
         if actions:
             cls.push_actions()
         if widget_black:
             cls.push_widget_black()
         cls.set_AdbIME()
-
         runtime = monkey_shell.split('running-minutes ')[1].split(' ')[0]
         logger.info('starting run monkey')
         logger.info('It will be take about %s minutes,please be patient ...........................' % runtime)
@@ -148,13 +149,14 @@ class Maxim(object):
 
     @classmethod
     def set_AdbIME(cls):
+        logger.info('setting AdbIME as default')
         ime = cls.d.shell('ime list -s').output
         print(ime)
         if 'adbkeyboard' in ime:
             cls.d.shell('ime set com.android.adbkeyboard/.AdbIME')
             logger.info('Set adbkeyboard as default')
         else:
-            cls.local_install('../apk/ADBKeyBoard.apk')
+            cls.local_install('./apk/ADBKeyBoard.apk')
             cls.d.shell('ime enable com.android.adbkeyboard/.AdbIME')
             cls.d.shell('ime set com.android.adbkeyboard/.AdbIME')
             logger.info('install adbkeyboard and set as default')

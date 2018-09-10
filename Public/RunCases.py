@@ -16,7 +16,7 @@ class RunCases:
             os.mkdir(self.test_report_root)
 
         date_time = time.strftime('%Y-%m-%d_%H_%M_%S', time.localtime(time.time()))
-        self.test_report_path = self.test_report_root + '\\' + date_time + '-%s' % self.device['model']
+        self.test_report_path = self.test_report_root + '/' + date_time + '-%s' % self.device['model']
         if not os.path.exists(self.test_report_path):
             os.mkdir(self.test_report_path)
 
