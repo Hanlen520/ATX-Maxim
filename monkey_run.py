@@ -3,9 +3,9 @@
 import sys
 
 # sys.path.append('.')
-from Public.Drivers import Drivers
-from Public.Report import *
-from Public.Maxim_monkey import Maxim
+from public.drivers import Drivers
+from public.report import *
+from public.maxim_monkey import Maxim
 
 if __name__ == '__main__':
     # back up old report dir 备份旧的测试报告文件夹到TestReport_backup下

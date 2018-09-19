@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import os
 import json
-from Public.ReadConfig import ReadConfig
+from public.readconfig import ReadConfig
 
 proDir = os.path.split(os.path.realpath(__file__))[0]
 data_path = os.path.join(proDir, "data.json")

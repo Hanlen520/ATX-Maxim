@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from Public.ReadConfig import ReadConfig
-from Public.ATX_Server import ATX_Server
+from public.readconfig import ReadConfig
+from public.atx_server import ATX_Server
 import uiautomator2 as u2
 import subprocess
 import re

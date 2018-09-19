@@ -3,7 +3,7 @@ import time
 import shutil
 
 
-from Public.Maxim_monkey import Maxim
+from public.maxim_monkey import Maxim
 from logzero import logger as log
 
 

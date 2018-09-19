@@ -4,14 +4,14 @@ import zipfile
 
 from multiprocessing import Pool
 import uiautomator2 as u2
-from Public.Devices_new import *
-# from Public.Devices import *
-from Public.RunCases import RunCases
-from Public.ReportPath import ReportPath
+from public.devices_new import *
+# from public.Devices import *
+from public.runcases import RunCases
+from public.reportpath import ReportPath
 
-from Public.Log import Log
-from Public.ReadConfig import ReadConfig
-from Public.Test_data import *
+from public.log import Log
+from public.readconfig import ReadConfig
+from public.test_data import *
 import logzero
 from logzero import logger
 import logging
